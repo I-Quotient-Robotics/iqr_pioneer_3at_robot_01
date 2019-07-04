@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<robot name="p3at_phantomx_kinect" xmlns:xacro="http://ros.org/wiki/xacro">
+  <!-- Include accessories -->
+  <xacro:include filename="$(find iqr_pioneer_3at_robot_description)/urdf/pioneer3at.urdf.xacro" />
+  <xacro:include filename="$(find iqr_pioneer_3at_robot_description)/urdf/phantomx_reactor_no_wrist.urdf.xacro" />
+  <xacro:include filename="$(find iqr_pioneer_3at_robot_description)/urdf/pan_tilt.urdf.xacro" />
+
+  <!-- footprint -->
+  <joint name="footprint_joint" type="fixed">
+    <origin xyz="0 0 0.0" rpy="0 0 0" />
+    <parent link="base_link"/>
+    <child link="base_footprint" />
+  </joint>
+  <link name="base_footprint" />
+  <!-- phantomx_reactor_arm -->
+  <xacro:phantomx_reactor_no_wrist prefix="arm_" parent="base_link">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:phantomx_reactor_no_wrist>
+  <!-- pan_tilt and kinect -->
+  <xacro:pan_tilt parent="base_link" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:pan_tilt>
+</robot>
