@@ -85,9 +85,9 @@
       <child link="${prefix}_kinect_surface"/>
     </joint>
 
-    <link name="kinect_v2">
+    <link name="kinect_v2_link">
       <visual>
-        <origin xyz="0 0 0" rpy="0 0 0" />
+        <origin xyz="0 0 0" rpy="${PI/2} ${-PI/2} 0" />
         <geometry>
           <mesh filename="package://iqr_pioneer_3at_robot_description/mesh/kinect_v2.stl" />
         </geometry>
@@ -98,9 +98,9 @@
     </link>
 
     <joint name="kinect_joint" type="fixed">
-      <origin xyz="0 0 0" rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="${-PI/2} 0 ${-PI/2}" />
       <parent link="${prefix}_kinect_surface"/>
-      <child link="kinect_v2"/>
+      <child link="kinect_v2_link"/>
     </joint>
 
   </xacro:macro>

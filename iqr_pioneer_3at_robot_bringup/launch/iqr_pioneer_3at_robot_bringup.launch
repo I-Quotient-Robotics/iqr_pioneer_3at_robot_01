@@ -23,7 +23,10 @@
   </node>
 
   <!-- Load Kinect v2 bridge driver -->
-  <!-- <include file = "$(find kinect2_bridge)/launch/kinect2_bridge.launch"/> -->
+  <include file = "$(find kinect2_bridge)/launch/kinect2_bridge.launch">
+    <arg name="base_name"         value="kinect_v2"/>
+    <arg name="publish_tf"        value="true"/>
+  </include>
   
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
       <param name="publish_frequency" type="double" value="30.0" />
