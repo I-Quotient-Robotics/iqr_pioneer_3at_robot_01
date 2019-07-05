@@ -4,7 +4,7 @@
   <arg name="gui" default="True" />
   <arg name="rvizconfig" default="$(find iqr_pioneer_3at_robot_description)/rviz/view_model.rviz" />  
 
-  <param name="robot_description" command="$(find xacro)/xacro.py $(find iqr_pioneer_3at_robot_description)/urdf/p3at_phantomx_kinect.urdf.xacro" />  
+  <param name="robot_description" command="$(find xacro)/xacro.py $(find iqr_pioneer_3at_robot_description)/urdf/p3at_phantomx_dynamixel_kinect.urdf.xacro" />  
   <param name="use_gui" value="$(arg gui)"/>  
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
